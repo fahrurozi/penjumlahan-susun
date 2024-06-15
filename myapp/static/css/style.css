@@ -1,0 +1,52 @@
+.badge {
+    display: inline-block;
+    min-width: 5px;
+    padding: 22px 30px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    background: #1779ba;
+    color: #fefefe;
+}
+
+.badge-yellow {
+    display: inline-block;
+    margin: 0 10px;
+    min-width: 5px;
+    padding: 12px 25px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    background: #dac400;
+    border: none;
+    color: #fefefe;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.col-3,
+.col-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.badge-yellow:active {
+    background: blue;
+}
+
+.vertical-line{
+    border: 10px solid black;
+    height: 50%;
+    position: absolute;
+    left: 47%;
+    margin-top: 27px
+}
+
+.horizontal-line{
+    border: 10px solid black;
+    position: absolute;
+    width: 15%;
+    margin-top: 27px;
+    margin-left: 20%;
+}
