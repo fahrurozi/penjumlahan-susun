@@ -23,6 +23,9 @@ let text = {
   ],
 };
 
+var audioCorrect = new Audio('/static/sound/correct.mp4');
+var audioIncorrect = new Audio('/static/sound/incorrect.mp4');
+
 let data = text.data;
 currentNumber = 1;
 initQUestion();
@@ -219,15 +222,11 @@ function removeRedBgButton() {
 }
 
 function correctSound(){
-  var audio = new Audio('/static/sound/correct.mp4');
-  // speed
-  audio.playbackRate = 1.5;
-  audio.play();
+  audioCorrect.playbackRate = 1.5;
+  audioCorrect.play();
 }
 
 function incorrectSound(){
-  var audio = new Audio('/static/sound/incorrect.mp4');
-  // speed
-  audio.playbackRate = 1.5;
-  audio.play();
+  audioIncorrect.playbackRate = 1.5;
+  audioIncorrect.play();
 }
