@@ -47,8 +47,8 @@
   background: blue;
 }
 
-.badge-yellow:disabled{
-    background: #bbbbbb;
+.badge-yellow:disabled {
+  background: #bbbbbb;
 }
 
 .vertical-line {
@@ -84,6 +84,10 @@
   border: 2px solid black;
 }
 
+.bg-red {
+  background: red;
+}
+
 @-webkit-keyframes moveLeft {
   from {
     left: 50%;
@@ -112,10 +116,20 @@
 }
 
 @keyframes moveFirst {
-    from {
-      top: 70%;
-    }
-    to {
-      top: 4%;
-    }
+  from {
+    top: 70%;
   }
+  to {
+    top: 4%;
+  }
+}
+
+.blink-me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

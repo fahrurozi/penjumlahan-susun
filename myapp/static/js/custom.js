@@ -73,6 +73,13 @@ function initQUestion() {
   $("#var2-1").html(data_var2_split[0]);
   $("#var2-2").html(data_var2_split[1]);
 
+  $("#mid-answer").css({
+    position: "",
+    top: "",
+  })
+  $("#mid-answer-hidden").addClass("d-none");
+  $("#mid-answer").addClass("blink-me");
+
   currentNumberResultKey =
     data[currentNumber - 1].var1 + data[currentNumber - 1].var2;
   disabledBtnQuestion();
@@ -84,28 +91,37 @@ function selectNumber(number) {
 }
 
 function answer(number_answer) {
-  console.log("statusAnswer", statusAnswer);
+  console.log("number_answer", number_answer);
   console.log(number_answer);
   if (statusAnswer == 0) {
     val_mid_right = data_var1_split[1] + data_var2_split[1];
+    console.log("val_mid_right", val_mid_right);
     val_mid_right_split = val_mid_right.toString().split("").map(Number);
     if (number_answer != val_mid_right_split[0]) {
-      console.log("wrong");
+      incorrectSound()
+      $('#btn-answer-' + number_answer).addClass('bg-red')
     } else {
+      correctSound();
       $("#mid-answer").html(number_answer);
       $("#mid-answer").addClass("badge-correct");
       $("#mid-answer").removeClass("bg-black");
+      $("#mid-answer").removeClass("blink-me");
+      removeRedBgButton()
       statusAnswer++;
+      $("#right-answer").addClass("blink-me");
     }
   } else if (statusAnswer == 1) {
-    val_mid_left = data_var1_split[0] + data_var2_split[0];
-    val_mid_left_split = val_mid_left.toString().split("").map(Number);
-    if (number_answer != val_mid_left_split[0]) {
+    if (number_answer != val_mid_right_split[1]) {
+      incorrectSound()
       console.log("wrong");
+      $('#btn-answer-' + number_answer).addClass('bg-red')
     } else {
+      correctSound()
+      $("#right-answer").removeClass("blink-me");
       $("#right-answer").html(number_answer);
       $("#right-answer").addClass("badge-correct");
       $("#right-answer").removeClass("bg-black");
+      removeRedBgButton()
 
       disableAnswerButton();
       setTimeout(function () {
@@ -126,6 +142,7 @@ function answer(number_answer) {
                 })
                 .promise()
                 .done(function () {
+                  $("#left-answer").addClass("blink-me");
                   enableAnswerButton();
                   statusAnswer++;
                 });
@@ -137,11 +154,16 @@ function answer(number_answer) {
     sisa = val_mid_right_split[0];
     val_result_left = data_var1_split[0] + data_var2_split[0] + sisa;
     if (number_answer != val_result_left) {
+      incorrectSound()
       console.log("wrong");
+      $('#btn-answer-' + number_answer).addClass('bg-red')
     } else {
+      correctSound()
+      $("#left-answer").removeClass("blink-me");
       $("#left-answer").html(number_answer);
       $("#left-answer").addClass("badge-correct");
       $("#left-answer").removeClass("bg-black");
+      removeRedBgButton()
       statusAnswer++;
       showAlert();
     }
@@ -149,26 +171,32 @@ function answer(number_answer) {
 }
 
 function showAlert() {
-  if (currentNumber == data.length) {
-    Swal.fire({
-      title: "Selamat Anda Telah Menyelesaikan Soal",
-      text: data_var1 + " + " + data_var2 + " = " + currentNumberResultKey,
-      icon: "success",
-      confirmButtonText: "Selesai",
-    });
-  } else {
-    Swal.fire({
-      title: "Jawaban Anda Benar",
-      text: data_var1 + " + " + data_var2 + " = " + currentNumberResultKey,
-      icon: "success",
-      confirmButtonText: "Lanjut Soal Berikutnya",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        currentNumber++;
-        selectNumber(currentNumber);
-      }
-    });
-  }
+  setTimeout(function () {
+    if (currentNumber == data.length) {
+      Swal.fire({
+        title: "Selamat Anda Telah Menyelesaikan Soal",
+        text: data_var1 + " + " + data_var2 + " = " + currentNumberResultKey,
+        icon: "success",
+        confirmButtonText: "Selesai",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Jawaban Anda Benar",
+        text: data_var1 + " + " + data_var2 + " = " + currentNumberResultKey,
+        icon: "success",
+        confirmButtonText: "Lanjut Soal Berikutnya",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          currentNumber++;
+          selectNumber(currentNumber);
+        }
+      });
+    }
+  }, 3000);
 }
 
 function disableAnswerButton() {
@@ -182,4 +210,24 @@ function enableAnswerButton() {
   for (let i = 0; i <= 9; i++) {
     $("#btn-answer-" + i).attr("disabled", false);
   }
+}
+
+function removeRedBgButton() {
+  for (let i = 0; i <= 9; i++) {
+    $('#btn-answer-' + i).removeClass('bg-red')
+  }
+}
+
+function correctSound(){
+  var audio = new Audio('/static/sound/correct.mp4');
+  // speed
+  audio.playbackRate = 1.5;
+  audio.play();
+}
+
+function incorrectSound(){
+  var audio = new Audio('/static/sound/incorrect.mp4');
+  // speed
+  audio.playbackRate = 1.5;
+  audio.play();
 }
