@@ -1,52 +1,121 @@
 .badge {
-    display: inline-block;
-    min-width: 5px;
-    padding: 22px 30px;
-    border-radius: 50%;
-    font-size: 30px;
-    text-align: center;
-    background: #1779ba;
-    color: #fefefe;
+  display: inline-block;
+  min-width: 5px;
+  padding: 22px 30px;
+  border-radius: 50%;
+  font-size: 30px;
+  text-align: center;
+  background: #1779ba;
+  color: #fefefe;
+}
+
+.badge-correct {
+  display: inline-block;
+  min-width: 5px;
+  padding: 22px 30px;
+  border-radius: 50%;
+  font-size: 30px;
+  text-align: center;
+  background: #17ba32;
+  color: #fefefe;
+  transition: all 0.2s ease;
 }
 
 .badge-yellow {
-    display: inline-block;
-    margin: 0 10px;
-    min-width: 5px;
-    padding: 12px 25px;
-    border-radius: 50%;
-    font-size: 30px;
-    text-align: center;
-    background: #dac400;
-    border: none;
-    color: #fefefe;
-    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  display: inline-block;
+  margin: 0 10px;
+  min-width: 5px;
+  padding: 12px 25px;
+  border-radius: 50%;
+  font-size: 30px;
+  text-align: center;
+  background: #dac400;
+  border: none;
+  color: #fefefe;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 }
 
 .col-3,
 .col-4 {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .badge-yellow:active {
-    background: blue;
+  background: blue;
 }
 
-.vertical-line{
-    border: 10px solid black;
-    height: 50%;
-    position: absolute;
-    left: 47%;
-    margin-top: 27px
+.badge-yellow:disabled{
+    background: #bbbbbb;
 }
 
-.horizontal-line{
-    border: 10px solid black;
-    position: absolute;
-    width: 15%;
-    margin-top: 27px;
-    margin-left: 20%;
+.vertical-line {
+  border: 10px solid black;
+  height: 50%;
+  position: absolute;
+  left: 47%;
+  margin-top: 27px;
 }
+
+.horizontal-line {
+  border: 10px solid black;
+  position: absolute;
+  width: 15%;
+  margin-top: 27px;
+  margin-left: 20%;
+}
+
+.btn-current {
+  background: #1779ba;
+  color: #fefefe;
+  border: 4px solid black;
+}
+
+.btn-next {
+  background: #dac400;
+  color: #fefefe;
+  border: 2px solid black;
+}
+
+.btn-done {
+  background: #05a11a;
+  border: 2px solid black;
+}
+
+@-webkit-keyframes moveLeft {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 20%;
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    left: 43%;
+  }
+  to {
+    left: 14.6%;
+  }
+}
+
+@-webkit-keyframes moveFirst {
+  from {
+    top: 70%;
+  }
+  to {
+    top: 4%;
+  }
+}
+
+@keyframes moveFirst {
+    from {
+      top: 70%;
+    }
+    to {
+      top: 4%;
+    }
+  }

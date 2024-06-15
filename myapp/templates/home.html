@@ -1,165 +1,150 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap ademo</title>
-    
-    {%  load static %}
-    <link href="{% static '\css\bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '\css\style.css' %}">
+{% block content %}
 
-    <style>
+<div class="container" style="max-width: 400px;">
 
 
-    </style>
-</head>
-
-<body style="background-image: linear-gradient(rgb(58, 198, 253), rgb(0, 96, 134)); height: 100vh">
-
-    <div class="container" style="max-width: 400px;">
-        <div class="row d-flex justify-content-center align-items-center min-vh-100">
-            <div style="width: 90vw; height:95vh">
-                <div class="card-body">
-                    <h4 class="card-title text-center py-2 mb-2 text-black rounded" style="background-color: #fff">Papan
-                        Penjumlahan Susun</h4>
-                    <div class="card-title text-black rounded pb-1" style="background-color: #fff;">
-                        <b class="ps-2">Nomor Soal</b><br>
-                        <div class="mx-2 mb-2">
-                            <button class="rounded px-3 py-1"><b>1</b></button>
-                            <button class="rounded px-3 py-1"><b>2</b></button>
-                            <button class="rounded px-3 py-1"><b>3</b></button>
-                            <button class="rounded px-3 py-1"><b>4</b></button>
-                            <button class="rounded px-3 py-1"><b>5</b></button>
-                            <br>
-                            <div class="d-flex justify-content-center">
-                                <div class="card mt-2 px-4 d-inline-block">
-                                    <div class="card-body text-center py-1 px-2">
-                                        <h1>16 + 15 = ...</h1>
-                                    </div>
+    <div class="row d-flex justify-content-center align-items-center min-vh-100">
+        <div style="width: 90vw; height:95vh">
+            <div class="card-body">
+                <h4 class="card-title text-center py-2 mb-2 text-black rounded" style="background-color: #fff">Papan
+                    Penjumlahan Susun</h4>
+                <div class="card-title text-black rounded pb-1" style="background-color: #fff;">
+                    <b class="ps-2">Nomor Soal</b><br>
+                    <div class="mx-2 mb-2">
+                        <button class="rounded px-3 py-1" id="btn-q1" onclick="selectNumber(1)"><b>1</b></button>
+                        <button class="rounded px-3 py-1" id="btn-q2" onclick="selectNumber(2)"><b>2</b></button>
+                        <button class="rounded px-3 py-1" id="btn-q3" onclick="selectNumber(3)"><b>3</b></button>
+                        <button class="rounded px-3 py-1" id="btn-q4" onclick="selectNumber(4)"><b>4</b></button>
+                        <button class="rounded px-3 py-1" id="btn-q5" onclick="selectNumber(5)"><b>5</b></button>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <div class="card mt-2 px-4 d-inline-block">
+                                <div class="card-body text-center py-1 px-2">
+                                    <h1><span id="soal-var1">-</span> + <span id="soal-var2">-</span> = ...</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card my-2">
-                        <div class="card-body mx-auto">
-                            <div class="vertical-line"></div>
-                            <div class="horizontal-line"></div>
-                            <div class="container mb-2">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <span class="badge bg-black">&nbsp&nbsp</span>
-                                    </div>
-                                    <div class="col-4">
-
-                                    </div>
-                                    <div class="col-4">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container mb-2">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <span class="badge">1</span>
-                                    </div>
-                                    <div class="col-4">
-
-                                    </div>
-                                    <div class="col-4">
-                                        <span class="badge">1</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <span class="badge">1</span>
-                                    </div>
-                                    <div class="col-4">
-
-                                    </div>
-                                    <div class="col-4">
-                                        <span class="badge">1</span>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div class="card my-2">
+                    <div class="card-body mx-auto">
+                        <div class="vertical-line"></div>
+                        <div class="horizontal-line"></div>
+                        <div class="container mb-2">
                             <div class="row">
-                                <div class="col-10 my-2">
-                                    <hr style="border-width: 5px; border-color: red solid; opacity: 1">
+                                <div class="col-4">
+                                    <span class="badge bg-black">&nbsp&nbsp</span>
                                 </div>
-                                <div class="col-2">
-                                    <b style="font-size: 30px">+</b>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <span class="badge bg-black mx-1">&nbsp&nbsp</span>
-                                    </div>
-                                    <div class="col-4">
-                                        <span class="badge bg-black mx-1">&nbsp&nbsp</span>
-                                    </div>
-                                    <div class="col-4">
-                                        <span class="badge bg-black mx-1">&nbsp&nbsp</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col-4">
 
-                    <div class="container d-flex justify-content-center mb-3">
-                        <div class="row">
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-1">1</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-2">2</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-3">3</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-4">4</button>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="container d-flex justify-content-center mb-3">
-                        <div class="row">
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-5">5</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-6">6</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-7">7</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="badge-yellow" id="btn-answer-8">8</button>
+                        <div class="container mb-2">
+                            <div class="row">
+                                <div class="col-4">
+                                    <span class="badge" id="var1-1">1</span>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+                                    <span class="badge"  id="var1-2">1</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="container d-flex justify-content-center">
-                        <div class="row">
-                            <div class="col-6">
-                                <button class="badge-yellow" id="btn-answer-9">9</button>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <span class="badge"  id="var2-1">1</span>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+                                    <span class="badge"  id="var2-2">1</span>
+                                </div>
                             </div>
-                            <div class="col-6">
-                                <button class="badge-yellow" id="btn-answer-0">0</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 my-2">
+                                <hr style="border-width: 5px; border-color: red solid; opacity: 1">
+                            </div>
+                            <div class="col-2">
+                                <b style="font-size: 30px">+</b>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <span class="badge bg-black mx-1" id="left-answer">&nbsp&nbsp</span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="badge bg-black mx-1" id="mid-answer">&nbsp&nbsp</span>
+                                    <span class="badge bg-black mx-1 d-none" style="visibility: hidden;" id="mid-answer-hidden">&nbsp&nbsp</span>
+                                </div>
+                                <div class="col-4">
+                                    <span class="badge bg-black mx-1" id="right-answer">&nbsp&nbsp</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="container d-flex justify-content-center mb-3">
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-1" onclick="answer(1)">1</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-2" onclick="answer(2)">2</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-3" onclick="answer(3)">3</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-4" onclick="answer(4)">4</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-center mb-3">
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-5" onclick="answer(5)">5</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-6" onclick="answer(6)">6</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-7" onclick="answer(7)">7</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="badge-yellow" id="btn-answer-8" onclick="answer(8)">8</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="badge-yellow" id="btn-answer-9" onclick="answer(9)">9</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="badge-yellow" id="btn-answer-0" onclick="answer(0)">0</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 
-    <script src="{% static '\js\bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static '\js\popper.min.js' %}"></script>
-    <script src="{% static '\js\bootstrap.min.js' %}"></script>
-</body>
 
-</html>
+</div>
+
+
+{% endblock %}
