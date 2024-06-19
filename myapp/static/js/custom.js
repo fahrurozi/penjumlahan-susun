@@ -32,6 +32,30 @@ initQUestion();
 // 0 = mid; 1 = right; 2 = left
 statusAnswer = 0;
 
+Swal.fire({
+  imageUrl: "/static/img/1.png",
+  imageWidth: 300,
+  imageHeight: 500,
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      imageUrl: "/static/img/2.png",
+      imageWidth: 300,
+      imageHeight: 500,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          imageUrl: "/static/img/3.png",
+          imageWidth: 300,
+          imageHeight: 500,
+        })
+      }
+    });
+  }
+});
+
+
+
 function disabledBtnQuestion() {
   number = [1, 2, 3, 4, 5];
   number.forEach((element) => {
