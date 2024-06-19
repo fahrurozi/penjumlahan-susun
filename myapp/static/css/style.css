@@ -125,7 +125,7 @@
 }
 
 .blink-me {
-  animation: blinker 1s linear infinite;
+  animation: blinker 1s linear infinite !important;
 }
 
 @keyframes blinker {
