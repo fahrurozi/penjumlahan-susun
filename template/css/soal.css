@@ -86,42 +86,22 @@
     background: red;
   }
   
-  @-webkit-keyframes moveLeft {
-    from {
-      left: 50%;
-    }
-    to {
-      left: 20%;
-    }
+  @keyframes moveFirst {
+    from { top: 70%; left: 43%; }
+    to   { top: 12%; left: 43%; }
   }
   
   @keyframes moveLeft {
     from {
+      top: 12%;       /* Harus sama dengan hasil akhir moveFirst */
       left: 43%;
     }
     to {
+      top: 12%;       /* Tetap sama agar tidak lompat */
       left: 14.6%;
     }
   }
-  
-  @-webkit-keyframes moveFirst {
-    from {
-      top: 70%;
-    }
-    to {
-      top: 4%;
-    }
-  }
-  
-  @keyframes moveFirst {
-    from {
-      top: 70%;
-    }
-    to {
-      top: 4%;
-    }
-  }
-  
+
   .blink-me {
     animation: blinker 1s linear infinite !important;
   }
@@ -131,4 +111,3 @@
       opacity: 0;
     }
   }
-  

@@ -73,7 +73,7 @@ function disabledBtnQuestion() {
 
 function initQUestion() {
   // reset all css
-  $("#mid-answer").removeClass("badge-correct");
+  $("#").remid-answermoveClass("badge-correct");
   $("#mid-answer").addClass("bg-black");
   $("#mid-answer").html("?");
   $("#mid-answer-hidden").addClass("d-none");
