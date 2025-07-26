@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kotak Gambar Soal</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/soal.css" />
+
+  <style>
+    .container-soal {
+      width: 100%;
+      max-width: 400px;
+      height: 700px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .kotak-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px 50px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      position: relative; /* penting! untuk jadi acuan posisi panah */
+    }
+
+    .kotak {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .answer-group {
+      border: 2px dashed #999;
+      border-radius: 10px;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: #fefefe;
+      z-index: 1;
+    }
+
+    /* === Panah ke atas lalu belok ke kiri === */
+    .arrow-container {
+      position: absolute;
+      top:95px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 160px;
+      z-index: 0;
+    }
+
+    .arrow-line-vertical {
+      position: absolute;
+      left: 50%;
+      width: 4px;
+      height: 320px;
+      border: 2px dashed #000000;
+      background-color: rgb(255, 255, 255);
+      transform: translateX(-50%);
+    }
+
+    .arrow-line-horizontal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 60px;
+      border: 2px dashed #000000;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .arrow-head {
+      position: absolute;
+      top: -6px;
+      left: -5px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 12px solid rgb(0, 0, 0);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container container-soal">
+
+    <h1>15 + 12 = ...</h1>
+    <br><br>
+
+    <div class="kotak-container">
+      <img src="img/1-blue.png" class="kotak" alt="Gambar 1" />
+      <img src="img/5-red.png" class="kotak" alt="Gambar 2" />
+      <img src="img/1-blue.png" class="kotak" alt="Gambar 3" />
+      <img src="img/5-red.png" class="kotak" alt="Gambar 4" />
+    </div>
+
+    <!-- Panah -->
+    <div class="arrow-container">
+      <div class="arrow-line-vertical"></div>
+      <div class="arrow-line-horizontal"></div>
+      <div class="arrow-head"></div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-between w-100 my-3">
+      <hr class="flex-grow-1 m-0 bg-black opacity-100" style="height: 4px; border: none;" />
+      <span class="ms-2 fw-bold">+</span>
+    </div>
+
+    <div class="answer-group mt-auto p-2">
+      <!-- Baris 1 -->
+      <div class="d-flex justify-content-center gap-2 mb-2">
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(0)">0</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(1)">1</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(2)">2</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(3)">3</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(4)">4</button></div>
+      </div>
+
+      <!-- Baris 2 -->
+      <div class="d-flex justify-content-center gap-2">
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(5)">5</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(6)">6</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(7)">7</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(8)">8</button></div>
+        <div class="col-auto"><button class="badge-yellow" onclick="answer(9)">9</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

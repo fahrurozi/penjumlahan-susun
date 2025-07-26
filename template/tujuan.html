@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .menu-wrapper {
+      width: 100%;
+      max-width: 400px;
+      height: 700px;
+      background-color: #fff;
+      border: 8px solid limegreen;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .menu-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        flex-grow: 1;
+    }
+
+
+    .menu-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .menu-button img {
+    width: 100px;
+    height: 100px;
+    }
+
+    .menu-button span {
+    font-size: 20px;
+    font-weight: bold;
+    }
+
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .next-btn {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-wrapper">
+    <img src="img/btn-close.png" alt="Tutup" class="close-btn" />
+    <div class="menu-title">Tujuan Pembelajaran</div>
+
+    <div class="menu-items">
+      <p>
+        Media ini disusun untuk membantu anak hambatan pendengaran kelas IV dalam mencapai capaian pembelajaran Fase C pada mata pelajaran Matematika, yaitu:
+      </p>
+      <ol style="padding-inline-start: 30px">
+        <li>Menunjukkan cara melakukan penjumlahan dua bilangan yang hasilnya sampai 50 menggunakan benda konkret, dan</li>
+        <li>Menghitung hasil penjumlahan dua bilangan sampai dengan 50 menggunakan benda konkret</li>
+      </ol>
+    </div>
+
+    <img src="img/btn-next.png" alt="Lanjut" class="next-btn" />
+  </div>
+</body>
+</html>
