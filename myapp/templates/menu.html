@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    .menu-wrapper {
+      width: 100%;
+      max-width: 400px;
+      height: 700px;
+      background-color: #fff;
+      border: 8px solid limegreen;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .menu-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        gap: 30px;
+    }
+
+
+    .menu-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .menu-button img {
+    width: 100px;
+    height: 100px;
+    }
+
+    .menu-button span {
+    font-size: 20px;
+    font-weight: bold;
+    }
+
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .next-btn {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-wrapper">
+    <img src="{% static 'img/btn-close.png' %}" onclick="window.location.href='{% url 'cover' %}'" alt="Tutup" class="close-btn" />
+    <div class="menu-title">Menu</div>
+
+    <div class="menu-items">
+      <div class="menu-button">
+        <img src="{% static 'img/btn-tujuan.png' %}" onclick="window.location.href='{% url 'tujuan' %}'" alt="Tujuan Pembelajaran" />
+        <span>Tujuan Pembelajaran</span>
+      </div>
+      <div class="menu-button">
+        <img src="{% static 'img/btn-materi.png' %}" alt="Materi" />
+        <span>Materi</span>
+      </div>
+      <div class="menu-button">
+        <img src="{% static 'img/btn-soal.png' %}" onclick="window.location.href='{% url 'soal' %}'" alt="Soal" />
+        <span>Soal</span>
+      </div>
+    </div>
+
+    <!-- <img src="{% static 'img/btn-next.png' %}" alt="Lanjut" class="next-btn" /> -->
+  </div>
+</body>
+</html>

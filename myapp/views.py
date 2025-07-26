@@ -13,3 +13,16 @@ def home(request):
         json_data = json.load(file)
 
     return render(request, 'home.html', {'data': json.dumps(json_data, ensure_ascii=False)})
+
+
+def cover(request):
+    return render(request, 'cover.html')
+
+def menu(request):
+    return render(request, 'menu.html')
+
+def tujuan(request):
+    return render(request, 'tujuan.html')
+
+def soal(request):
+    return render(request, 'soal.html')

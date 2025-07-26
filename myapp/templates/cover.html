@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hitung Yuk</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hitung Yuk</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
   <style>
     .spacer {
       flex: 1;
@@ -36,7 +38,7 @@
     <div class="label">Media Penjumlahan<br/>Bersusun Digital</div>
     <div class="spacer">
       <div class="title">"HITUNG YUK"</div>
-      <button class="start-button" onclick="window.location.href='mulai.html'">Mulai</button>
+      <button class="start-button" onclick="window.location.href='{% url 'menu' %}'">Mulai</button>
     </div>
     <div class="footer">Untuk Anak Hambatan<br/>Pendengaran Kelas IV</div>
   </div>
