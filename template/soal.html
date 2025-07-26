@@ -33,7 +33,6 @@
       align-items: center;
       gap: 20px 50px;
       flex-wrap: wrap;
-      margin-top: 20px;
       position: relative; /* penting! untuk jadi acuan posisi panah */
     }
 
@@ -47,10 +46,16 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
+    .judul {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
+      padding: 10px 20px;
+      background-color: #a1caf0; /* Warna biru muda */
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      color: #000;
+      text-align: center;
     }
 
     .answer-group {
@@ -65,7 +70,7 @@
     /* === Panah ke atas lalu belok ke kiri === */
     .arrow-container {
       position: absolute;
-      top:95px;
+      top: 110px;
       left: 50%;
       transform: translateX(-50%);
       width: 120px;
@@ -104,14 +109,56 @@
       border-right: 12px solid rgb(0, 0, 0);
     }
 
+  
+    .teks-diatas {
+      align-self: flex-start;
+      margin-left: 50px; /* Atur posisi dari kiri */
+      font-weight: bold;
+      font-size: 40px;
+      margin-bottom: 0px;
+      color: blue;
+    }
+
+    .nomor-soal {
+      width: 40px;
+      height: 40px;
+      background-color: #a1caf0;
+      color: #000;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .jawaban-box {
+      width: 60px;
+      height: 60px;
+      background-color: #ffeeba;
+      border: 2px solid #ffc107;
+      border-radius: 10px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
   </style>
 </head>
 <body>
-  <div class="container container-soal">
+  <div class="container container-soal"  style=" border: 8px solid limegreen;">
 
-    <h1>15 + 12 = ...</h1>
-    <br><br>
+    <div class="d-flex align-items-center mb-3">
+      <div class="nomor-soal">1.</div>
+      <h1 class="judul ms-3 mb-0">15 + 12 = ...</h1>
+    </div>
 
+    <p class="teks-diatas">1</h1>
     <div class="kotak-container">
       <img src="img/1-blue.png" class="kotak" alt="Gambar 1" />
       <img src="img/5-red.png" class="kotak" alt="Gambar 2" />
@@ -126,9 +173,14 @@
       <div class="arrow-head"></div>
     </div>
 
-    <div class="d-flex align-items-center justify-content-between w-100 my-3">
+    <div class="d-flex align-items-center justify-content-between w-100 my-3 mb-0">
       <hr class="flex-grow-1 m-0 bg-black opacity-100" style="height: 4px; border: none;" />
       <span class="ms-2 fw-bold">+</span>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3 mb-3">
+      <div class="jawaban-box">1</div>
+      <div class="jawaban-box">2</div>
     </div>
 
     <div class="answer-group mt-auto p-2">
