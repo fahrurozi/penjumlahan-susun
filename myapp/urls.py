@@ -6,4 +6,5 @@ urlpatterns = [
     path("menu", views.menu, name="menu"),
     path("tujuan", views.tujuan, name="tujuan"),
     path("soal", views.soal, name="soal"),
+    path("materi", views.materi, name="materi"),
 ]

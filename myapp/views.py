@@ -26,3 +26,7 @@ def tujuan(request):
 
 def soal(request):
     return render(request, 'soal.html')
+
+def materi(request):
+    return render(request, 'materi.html')
+

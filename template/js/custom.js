@@ -1,8 +1,8 @@
   let text = {
       data: [
         {
-          var1: 12,
-          var2: 9,
+          var1: 15,
+          var2: 5,
         },
         {
           var1: 29,
