@@ -185,8 +185,14 @@
           Swal.fire({
             title: "Jawaban Anda Benar",
             text: data_var1 + " + " + data_var2 + " = " + currentNumberResultKey,
-            icon: "success",
             confirmButtonText: "Lanjut",
+            position: 'bottom-end',
+            customClass: {
+              popup: 'swal-small',
+              icon: 'swal-small-icon',
+              title: 'swal-title-small',
+              confirmButton: 'swal-button-small'
+            }
           }).then((result) => {
             if (result.isConfirmed) {
               // 2. Swal kedua: soal selesai
@@ -218,8 +224,14 @@
           Swal.fire({
             title: "Jawaban Anda Benar",
             text: data_var1 + " + " + data_var2 + " = " + currentNumberResultKey,
-            icon: "success",
+            position: 'bottom-end',
             confirmButtonText: "Lanjut Soal Berikutnya",
+            customClass: {
+              popup: 'swal-small',
+              icon: 'swal-small-icon',
+              title: 'swal-title-small',
+              confirmButton: 'swal-button-small'
+            }
           }).then((result) => {
             if (result.isConfirmed) {
               currentNumber++;
