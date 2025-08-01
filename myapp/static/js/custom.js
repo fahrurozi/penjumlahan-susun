@@ -73,15 +73,15 @@ function initQUestion() {
   }
   
 
-  $("#var1-1").attr("src", `img/soal/${data_var1_split[0]}-blue.png`);
-  $("#var1-2").attr("src", `img/soal/${data_var1_split[1]}-red.png`);
+  $("#var1-1").attr("src", `/static/img/soal/${data_var1_split[0]}-blue.png`);
+  $("#var1-2").attr("src", `/static/img/soal/${data_var1_split[1]}-red.png`);
 
   if (data_var2_split[0] == 0) {
-    $("#var2-1").attr("src", `img/soal/0.png`);
+    $("#var2-1").attr("src", `/static/img/soal/0.png`);
   } else {
-    $("#var2-1").attr("src", `img/soal/${data_var2_split[0]}-blue.png`);
+    $("#var2-1").attr("src", `/static/img/soal/${data_var2_split[0]}-blue.png`);
   }
-  $("#var2-2").attr("src", `img/soal/${data_var2_split[1]}-red.png`);
+  $("#var2-2").attr("src", `/static/img/soal/${data_var2_split[1]}-red.png`);
 
   $("#mid-answer").css({
     position: "",
