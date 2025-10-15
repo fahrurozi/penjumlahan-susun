@@ -3,58 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu</title>
+  <title>Identitas & Tujuan</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <style>
     .menu-wrapper {
       width: 100%;
-      max-width: 400px;
-      height: 700px;
+      max-width: 900px;
       background-color: #fff;
       border: 8px solid limegreen;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
+      align-items: stretch;
+      padding: 24px 24px 90px; /* extra bottom padding for next button */
       box-sizing: border-box;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       position: relative;
+      gap: 12px;
     }
 
     .menu-title {
       font-size: 32px;
       font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .menu-items {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-        flex-grow: 1;
-        gap: 30px;
-    }
-
-
-    .menu-button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-top: 4px;
       text-align: center;
     }
 
-    .menu-button img {
-    width: 100px;
-    height: 100px;
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 18px;
     }
 
-    .menu-button span {
-    font-size: 20px;
-    font-weight: bold;
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #116611;
+      margin: 8px 0 4px;
     }
+    .section {
+      line-height: 1.6;
+      color: #222;
+      background: #f9fff9;
+      border: 1px solid #d7f0d7;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .section p { margin: 6px 0; }
+    .section ul, .section ol { margin: 6px 0 6px 18px; }
+    .section li { margin: 4px 0; }
 
 
     .close-btn {
@@ -78,20 +78,55 @@
 </head>
 <body>
   <div class="menu-wrapper">
-    <img src="{% static 'img/btn-close.png' %}" onclick="window.location.href='{% url 'cover' %}'" alt="Tutup" class="close-btn" />
-    <div class="menu-title">Tujuan Pembelajaran</div>
+    <a href="{% url 'cover' %}"><img src="{% static 'img/btn-close.png' %}" alt="Tutup" class="close-btn" /></a>
+    <div class="menu-title">Identitas Media & Tujuan Pembelajaran</div>
 
     <div class="menu-items">
-      <p>
-        Media ini disusun untuk membantu anak hambatan pendengaran kelas IV dalam mencapai capaian pembelajaran Fase C pada mata pelajaran Matematika, yaitu:
-      </p>
-      <ol style="padding-inline-start: 30px">
-        <li>Menunjukkan cara melakukan penjumlahan dua bilangan yang hasilnya sampai 50 menggunakan benda konkret, dan</li>
-        <li>Menghitung hasil penjumlahan dua bilangan sampai dengan 50 menggunakan benda konkret</li>
-      </ol>
+      <div class="section">
+        <div class="section-title">Identitas Media</div>
+        <ul>
+          <li><strong>Nama media:</strong> Hitung Yuk</li>
+          <li><strong>Jenis media:</strong> Media pembelajaran digital penjumlahan bersusun dengan menyimpan</li>
+          <li><strong>Sasaran:</strong> Anak hambatan pendengaran kelas IV</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Kompetensi Peserta Didik Pengguna Media</div>
+        <ol>
+          <li>Mampu mengenal angka 1–100</li>
+          <li>Mampu memahami letak satuan (kanan) dan puluhan (kiri)</li>
+          <li>Mampu mengoperasikan penjumlahan tanpa menyimpan (1–20)</li>
+          <li>Kemampuan reseptif dan ekspresif sudah tergambarkan</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Capaian Pembelajaran</div>
+        <ol>
+          <li>Peserta didik mampu menunjukkan cara melakukan penjumlahan dua bilangan yang hasilnya sampai 50 dengan menggunakan benda konkret</li>
+          <li>Peserta didik mampu menghitung hasil penjumlahan dua bilangan yang hasilnya 50 dengan benda konkret</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Tujuan Pembelajaran</div>
+        <p>
+          Melalui media Hitung Yuk, anak hambatan pendengaran kelas IV, dapat menyelesaikan operasi hitung penjumlahan bersusun dengan menyimpan dengan bantuan media semikonkret dengan ketepatan minimal 80%.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Definisi Operasional</div>
+        <ol>
+          <li><strong>Penjumlahan bersusun dengan menyimpan</strong>: Penjumlahan dua bilangan yang ditulis tegak lurus menurut nilai tempat, dengan "menyimpan" ke tempat lebih tinggi bila hasil melebihi 9.</li>
+          <li><strong>Konkrit</strong>: penggunaan benda nyata atau manipulatif yang dapat disentuh langsung untuk memahami konsep matematika.</li>
+          <li><strong>Semi-konkrit</strong>: penggunaan gambar atau representasi visual sebagai perantara dari benda nyata menuju simbol abstrak.</li>
+        </ol>
+      </div>
     </div>
 
-    <img src="{% static 'img/btn-next.png' %}" onclick="window.location.href='{% url 'menu' %}'" alt="Lanjut" class="next-btn" />
+    <a href="{% url 'menu' %}"><img src="{% static 'img/btn-next.png' %}" alt="Lanjut" class="next-btn" /></a>
   </div>
 </body>
 </html>
